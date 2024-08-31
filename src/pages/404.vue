@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import AppLogo from '../components/AppLogo.vue'
+import AppLogo from '../components/navbar/components/logos/AppLogo.vue'
 import NotFoundImage from '../components/NotFoundImage.vue'
 </script>
 

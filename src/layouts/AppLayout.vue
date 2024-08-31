@@ -9,7 +9,7 @@
     </template>
 
     <template #left>
-      <AppSidebar :minimized="isSidebarMinimized" :animated="!isMobile" :mobile="isMobile" />
+      <AppSidebar :minimized="isSidebarMinimized" :mobile="isMobile" />
     </template>
 
     <template #content>

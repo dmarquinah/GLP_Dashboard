@@ -35,7 +35,7 @@
 
 <script lang="ts" setup>
 import { useBreakpoint } from 'vuestic-ui'
-import AppLogo from '../components/AppLogo.vue'
+import AppLogo from '../components/navbar/components/logos/AppLogo.vue'
 
 const breakpoint = useBreakpoint()
 </script>

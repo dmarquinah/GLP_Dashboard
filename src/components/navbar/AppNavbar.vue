@@ -1,20 +1,20 @@
 <template>
-  <VaNavbar class="app-layout-navbar py-2 px-0">
+  <VaNavbar class="app-layout-navbar py-2 px-0 drop-shadow-lg rounded-b-sm h-18">
     <template #left>
       <div class="left">
         <Transition v-if="isMobile" name="icon-fade" mode="out-in">
           <VaIcon
             color="primary"
             :name="isSidebarMinimized ? 'menu' : 'close'"
-            size="24px"
+            size="28px"
             style="margin-top: 3px"
             @click="isSidebarMinimized = !isSidebarMinimized"
           />
         </Transition>
-        <RouterLink to="/" aria-label="Visit home page">
-          <AppLogo />
-        </RouterLink>
       </div>
+    </template>
+    <template #center>
+      <AppNavbarLogo />
     </template>
     <template #right>
       <AppNavbarActions class="app-navbar__actions" :is-mobile="isMobile" />
@@ -26,7 +26,7 @@
 import { storeToRefs } from 'pinia'
 import { useGlobalStore } from '../../stores/global-store'
 import AppNavbarActions from './components/AppNavbarActions.vue'
-import AppLogo from '../AppLogo.vue'
+import AppNavbarLogo from './AppNavbarLogo.vue'
 
 defineProps({
   isMobile: { type: Boolean, default: false },

@@ -9,10 +9,12 @@ export default {
       info: '#158DE3',
       danger: '#E42222',
       warning: '#FFD43A',
+      backgroundSidebar: '#FFFFFF',
     },
     dark: {
+      primary: '#7894c2',
       backgroundCardPrimary: '#111827',
-      backgroundCardSecondary: '#0f172a',
+      backgroundSidebar: '#000000',
     },
   },
   currentPresetName: 'dark',

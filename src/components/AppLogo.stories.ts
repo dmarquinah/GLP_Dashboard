@@ -1,4 +1,4 @@
-import AppLogo from './AppLogo.vue'
+import AppLogo from './navbar/components/logos/AppLogo.vue'
 
 export default {
   title: 'AppLogo',
