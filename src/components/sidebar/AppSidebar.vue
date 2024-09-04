@@ -96,7 +96,7 @@ const setActiveExpand = () =>
   (value.value = navigationRoutes.routes.map((route: INavigationRoute) => routeHasActiveChild(route)))
 
 const sidebarWidth = computed(() => (props.mobile ? '100vw' : '280px'))
-const color = computed(() => getColor('background-sidebar'))
+const color = computed(() => getColor('background-secondary'))
 const activeColor = computed(() => colorToRgba(getColor('focus'), 0.1))
 
 const iconColor = (route: INavigationRoute) => (routeHasActiveChild(route) ? 'primary' : 'secondary')

@@ -82,7 +82,9 @@
     "navigationLayout": "Diseño de navegación",
     "topBarButton": "Barra superior",
     "sideBarButton": "Barra lateral",
-    "navigation-home": "Inicio"
+    "navigation": {
+      "home": "Inicio"
+    }
   },
   "language": {
     "brazilian_portuguese": "Portugués brasileño",
@@ -154,5 +156,17 @@
   "buttonSelect": {
     "dark": "Oscuro",
     "light": "Claro"
+  },
+  "settings": {
+    "title": "Configuración",
+    "general-preferences": "Preferencias generales",
+    "theme": "Tema",
+    "language": "Idioma",
+    "notifications": {
+      "alert-title": "Tu configuración de notificaciones ha sido reagrupada y simplificada",
+      "alert-subtitle": "Puedes cambiarlas en cualquier momento.",
+      "title": "Notificaciones activas",
+      "send-whatsapp": "Enviar mensajes a Whatsapp"
+    }
   }
 }

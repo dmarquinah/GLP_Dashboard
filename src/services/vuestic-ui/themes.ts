@@ -1,7 +1,7 @@
 export default {
   presets: {
     light: {
-      backgroundPrimary: '#F4F6F8',
+      backgroundPrimary: '#F4EBE8',
       backgroundSecondary: '#FFFFFF',
       backgroundCardPrimary: '#F7F9F9',
       backgroundCardSecondary: '#ECFDE6',
@@ -13,8 +13,8 @@ export default {
     },
     dark: {
       primary: '#7894c2',
-      backgroundCardPrimary: '#111827',
-      backgroundSidebar: '#000000',
+      backgroundPrimary: '#191C24',
+      backgroundSecondary: '#1B2636',
     },
   },
   currentPresetName: 'dark',

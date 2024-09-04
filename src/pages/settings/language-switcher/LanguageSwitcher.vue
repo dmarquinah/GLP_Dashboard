@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-between">
-    <p>Language</p>
+    <p>{{ t('settings.language') }}</p>
     <div class="w-40">
       <VaSelect v-model="model" :options="options" />
     </div>
@@ -13,11 +13,11 @@ import { useI18n } from 'vue-i18n'
 
 type LanguageMap = Record<string, string>
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 const languages: LanguageMap = {
   english: 'English',
-  spanish: 'Spanish',
+  spanish: 'Español',
   brazilian_portuguese: 'Português',
   simplified_chinese: 'Simplified Chinese',
   persian: 'Persian',

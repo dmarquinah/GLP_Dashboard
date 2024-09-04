@@ -27,7 +27,10 @@
     "currentVisitors": "Current Visitors",
     "navigationLayout": "navigation layout",
     "topBarButton": "Top Bar",
-    "sideBarButton": "Side Bar"
+    "sideBarButton": "Side Bar",
+    "navigation": {
+      "home": "Home"
+    }
   },
   "language": {
     "brazilian_portuguese": "Português",
@@ -174,5 +177,17 @@
   "buttonSelect": {
     "dark": "Dark",
     "light": "Light"
+  },
+  "settings": {
+    "title": "Settings",
+    "general-preferences": "General preferences",
+    "theme": "Theme",
+    "language": "Language",
+    "notifications": {
+      "alert-title": "Your notification settings are regrouped and simplified",
+      "alert-subtitle": "Your setting choices can be changed at any moment.",
+      "title": "Notifications you recieve",
+      "send-whatsapp": "Send Whatsapp messages"
+    }
   }
 }
