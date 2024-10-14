@@ -4,6 +4,8 @@ import AuthLayout from '../layouts/AuthLayout.vue'
 import AppLayout from '../layouts/AppLayout.vue'
 
 import RouteViewComponent from '../layouts/RouterBypass.vue'
+import { Role } from '../utils/roles'
+import { getUserRole, isAuthenticated } from '../services/auth/auth'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -69,6 +71,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../pages/faq/FaqPage.vue'),
       },
     ],
+    meta: { requiresAuth: true, requiredRole: [Role.ADMIN] },
   },
   {
     path: '/auth',
@@ -121,6 +124,31 @@ const router = createRouter({
     }
   },
   routes,
+})
+
+router.beforeEach((to, from, next) => {
+  // Check if the route requires authentication
+  if (to.matched.some((record) => record.meta?.requiresAuth)) {
+    // The meta field will tell if we need extra logic to be checked
+    if (!isAuthenticated()) {
+      next({ name: 'login' })
+    } else {
+      // Is a role-based view
+      if (to.meta.requiredRole) {
+        const userRole = Role[getUserRole()]
+        if (to.meta.requiredRole.some((role) => role == userRole)) {
+          // User is authenticated and has the correct role, proceed to the route
+          next()
+        } else {
+          // If user does not have the required role, redirect to an unauthorized page
+          next({ name: userRole || 'login' })
+        }
+      }
+    }
+  } else {
+    // If the route does not require authentication, proceed as usual
+    next()
+  }
 })
 
 export default router
