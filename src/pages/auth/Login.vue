@@ -2,7 +2,7 @@
   <VaForm ref="form" @submit.prevent="submit">
     <h1 class="font-semibold text-4xl mb-4">Log in</h1>
     <p class="text-base mb-4 leading-5">
-      New to Vuestic?
+      New to CPUAdmin?
       <RouterLink :to="{ name: 'signup' }" class="font-semibold text-primary">Sign up</RouterLink>
     </p>
     <VaInput
@@ -46,24 +46,31 @@
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
-import { useRouter } from 'vue-router'
+//import { useRouter } from 'vue-router'
 import { useForm, useToast } from 'vuestic-ui'
 import { validators } from '../../services/utils'
+import { useAuthStore } from '../../stores/auth-store'
+import { ILoginDataBody } from '../../services/api/auth/auth-interfaces'
 
 const { validate } = useForm('form')
-const { push } = useRouter()
+//const { push } = useRouter()
 const { init } = useToast()
+
+const authStore = useAuthStore()
 
 const formData = reactive({
   email: '',
   password: '',
   keepLoggedIn: false,
-})
+} as ILoginDataBody)
 
-const submit = () => {
+const submit = async () => {
   if (validate()) {
-    init({ message: "You've successfully logged in", color: 'success' })
-    push({ name: 'dashboard' })
+    const response = await authStore.login(formData)
+    if (response) {
+      init({ message: "You've successfully logged in", color: 'success' })
+      //push({ name: 'dashboard' })
+    }
   }
 }
 </script>

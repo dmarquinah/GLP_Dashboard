@@ -1,0 +1,16 @@
+[
+  {
+    "path": "auth/login",
+    "data": {
+      "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3VwZXJ2aXNvciIsInN1YiI6MiwiaWF0IjoxNzI5NDUxMjM3LCJleHAiOjE3Mjk1Mzc2Mzd9.Yt1_3KuIlZnQE-48z_KVHHumJc7W_yGMXDoWKI7I2is",
+      "user": {
+        "id": 2,
+        "email": "eduardo@gmail.com",
+        "isActive": true,
+        "role": "admin",
+        "createdAt": "2024-08-03T19:29:26.338Z",
+        "updatedAt": "2024-08-03T19:40:28.912Z"
+      }
+    }
+  }
+]
