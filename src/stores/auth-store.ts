@@ -7,6 +7,7 @@ export const useAuthStore = defineStore('auth', {
     return {
       token: '',
       isFetching: false,
+      error: null,
     }
   },
 
@@ -16,11 +17,23 @@ export const useAuthStore = defineStore('auth', {
     },
 
     async login(body: ILoginDataBody) {
-      const { isFetching, data } = await postAuthLogin(body)
-      if (isFetching) this.isFetching = true
+      const response = await postAuthLogin(body)
+      console.log('data', response)
+      if (response.error) {
+        this.isFetching = true
+        this.error = response.error.value
+      }
 
-      console.log('data is:', data)
-      return data
+      if (response.data.value) return response.data.value
+      //return data
+    },
+  },
+
+  getters: {
+    getErrorMessage: (state) => {
+      if (state.error) {
+        return ``
+      }
     },
   },
 })

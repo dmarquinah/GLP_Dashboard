@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 import { useAuthStore } from '../../../stores/auth-store'
 
-const url = ref(import.meta.env.BASE_API_URL)
+const url = ref(import.meta.env.VITE_APP_API_URL)
 
 const networkFetchClient = createFetch({
   baseUrl: url,

@@ -4,7 +4,7 @@ import { IFetchClient } from './fetch.interface'
 import networkFetchClient from './network-client'
 
 const use_mock = ref(import.meta.env.USE_MOCK)
-const url = ref(import.meta.env.BASE_API_URL)
+const url = ref(import.meta.env.VITE_APP_API_URL)
 
 class ApiClient implements IFetchClient {
   constructor(private networkClient: typeof networkFetchClient) {}

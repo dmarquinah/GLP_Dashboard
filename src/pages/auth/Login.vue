@@ -38,8 +38,12 @@
       </RouterLink>
     </div>
 
+    <div v-if="authStore.error" class="flex justify-center mt-4">
+      <VaAlert color="danger" icon="warning">Usuario/contraseña incorrectos</VaAlert>
+    </div>
+
     <div class="flex justify-center mt-4">
-      <VaButton class="w-full" @click="submit"> Login</VaButton>
+      <VaButton class="w-full" @click="submit">Login</VaButton>
     </div>
   </VaForm>
 </template>
